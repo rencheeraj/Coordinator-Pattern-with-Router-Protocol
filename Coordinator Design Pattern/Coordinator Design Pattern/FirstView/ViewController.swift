@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     let viewModel : FirstViewModel
     required init(viewModel : FirstViewModel) {
