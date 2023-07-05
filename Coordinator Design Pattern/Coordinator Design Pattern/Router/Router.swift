@@ -11,7 +11,7 @@ import UIKit
 typealias NavigationBackClosure = (() -> ())
 
 protocol RouterProtocol{
-    func push(_ drawable: Drawable, isAnimated : Bool, onnavigateback : NavigationBackClosure?)
+    func push(_ drawable: Drawable, isAnimated : Bool, onNavigateback : NavigationBackClosure?)
     func pop(_ isAnimated : Bool)
     func popToRoot(_ isAnimated : Bool)
 }
@@ -25,7 +25,7 @@ class Router : NSObject, RouterProtocol{
         super.init()
         self.navigationController.delegate = self
     }
-    func push(_ drawable: Drawable, isAnimated: Bool, onnavigateback closure: NavigationBackClosure?) {
+    func push(_ drawable: Drawable, isAnimated: Bool, onNavigateback closure: NavigationBackClosure?) {
         let viewController = drawable.viewController
         if let closure = closure {
             closures.updateValue(closure, forKey: viewController.description)
